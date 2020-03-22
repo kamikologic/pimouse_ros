@@ -1,5 +1,7 @@
 sudo: required
-dist: xenial
+dist: trusty
 
-scripts:
-  - bash -xve ./test/travis_ros_install.bash
+script:
+  - bash -xve ./test/travis_prepare.bash
+  - source ~/catkin_ws/devel/setup.bash
+  - bash -xve ./test/travis_test.bash
